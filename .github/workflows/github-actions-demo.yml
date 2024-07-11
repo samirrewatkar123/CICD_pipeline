@@ -8,10 +8,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             
             - name: Set up python
-              uses: actions/setup-python@v2
+              uses: actions/setup-python@v5
               with:
                 python-version: '3.9'
 
@@ -19,4 +19,4 @@ jobs:
               run: |
                  python -m pip3 install --upgrade pip
                  pip3 install -r requirements.txt
-                 
+
