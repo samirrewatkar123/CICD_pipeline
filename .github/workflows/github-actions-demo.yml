@@ -1,1 +1,22 @@
+name: CI/CD Pipeline
 
+on: 
+    push:
+        branches: [main]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+            
+            - name: Set up python
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.9'
+
+            - name: Install Dependencies
+              run: |
+                 python -m pip3 install --upgrade pip
+                 pip3 install -r requirements.txt
+                 
