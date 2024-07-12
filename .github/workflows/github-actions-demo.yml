@@ -24,8 +24,8 @@ jobs:
               run: |
                 pytest tests/
             
-            - name: Lint with Ruff
+            - name: Run Lint
               run: |
-                pip install ruff
-                ruff --output-format=github .
+                pip install flake8
+                flake8 module/ tests/
               continue-on-error: true
